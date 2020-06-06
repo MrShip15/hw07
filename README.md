@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/Evgengrmit/hw05.svg?branch=master)](https://travis-ci.org/Evgengrmit/hw05)
-[![Build Status](https://travis-ci.com/Evgengrmit/hw05.svg?branch=master)](https://travis-ci.com/Evgengrmit/hw05)
-[![Coverage Status](https://coveralls.io/repos/github/Evgengrmit/hw05/badge.svg?branch=master)](https://coveralls.io/github/Evgengrmit/hw05?branch=master)
 ## Homework V
 
 ### Задание
