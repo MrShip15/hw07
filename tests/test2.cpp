@@ -1,6 +1,3 @@
-//
-// Created by Евгений Григорьев on 20.04.2020.
-//
 #include <Account.h>
 #include <Transaction.h>
 #include <gmock/gmock.h>
