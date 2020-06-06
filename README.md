@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MrShip15/hw05.svg?branch=master)](https://travis-ci.org/MrShip15/hw05)
+[![Coverage Status](https://coveralls.io/repos/github/MrShip15/hw05/badge.svg?branch=master)](https://coveralls.io/github/MrShip15/hw05?branch=master)
 ## Homework V
 
 ### Задание
