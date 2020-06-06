@@ -9,7 +9,7 @@
 % git remote remove origin
 % hub create
 Updating origin
-https://github.com/Evgengrmit/hw05
+https://github.com/MrShip15/hw05
 % git push -u origin master
 ```
 Cоздание `CMakeLists.txt`
@@ -36,7 +36,7 @@ EOF
 % mkdir third-party
 # Клонирование репозитория Google к своему репозиторию как подмодуль(проект в проекте)
 % git submodule add https://github.com/google/googletest third-party/gtest
-Cloning into '/Users/evgengrmit/Evgengrmit/workspace/projects/hw05/third-party/gtest'...
+Cloning into '/home/ivan/MrShip15/workspace/projects/hw05/third-party/gtest'...
 remote: Enumerating objects: 20049, done.
 remote: Total 20049 (delta 0), reused 0 (delta 0), pack-reused 20049
 Receiving objects: 100% (20049/20049), 7.33 MiB | 1.01 MiB/s, done.
@@ -54,16 +54,12 @@ option(BUILD_TESTS "Build tests" OFF)
 # Вставка в конец файла
 # Добавление сборки тестов
 % cat >> CMakeLists.txt <<EOF
-
 if(BUILD_TESTS)
-  # Включить поддержку тестирования:
   enable_testing()
   add_subdirectory(third-party/gtest)
-  # Создание списка файлов, соответствующих выражению и сохранение его в переменную
   file(GLOB \${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
   add_executable(check \${\${PROJECT_NAME}_TEST_SOURCES})
   target_link_libraries(check account transaction gtest_main gmock_main)
-  # Добавление тестов к проекту
   add_test(NAME check COMMAND check)
 endif()
 EOF
@@ -79,36 +75,33 @@ EOF
 // Тест на проверку правильности конструктора
 TEST(Account, Constructor)
 {
-Account a(2,300);
+Account a(5,400);
 
-EXPECT_EQ(a.id(),2);
-EXPECT_EQ(a.GetBalance(),300);
+EXPECT_EQ(a.id(),5);
+EXPECT_EQ(a.GetBalance(),400);
 }
 // Тест на проверку правильность изменения баланса
 TEST(Account, ChangeBalance)
 {
-  Account a(2,300);
+  Account a(5,400);
   a.Lock();
   a.ChangeBalance(100);
-  EXPECT_EQ(a.GetBalance(),400);
+  EXPECT_EQ(a.GetBalance(),500);
 }
 // Тест на проверку состояния аккаунта(открыт/закрыт)
 TEST(Account, Lock)
 {
-  Account a(2,300);
+  Account a(5,400);
   a.Lock();
   a.ChangeBalance(100);
   a.Unlock();
-  EXPECT_EQ(a.GetBalance(),400);
+  EXPECT_EQ(a.GetBalance(),500);
 }
 EOF
 ```
 Создание тестов для класса `Transaction`  && применение mock-объектов
 ```sh
 % cat >> tests/test2.cpp <<EOF
-//
-// Created by Евгений Григорьев on 20.04.2020.
-//
 #include <Account.h>
 #include <Transaction.h>
 #include <gmock/gmock.h>
@@ -149,13 +142,13 @@ EOF
 Сборка проекта
 ```sh
 # Генерация файлов для сборки с тестом
-$ cmake -H. -B_build -DBUILD_TESTS=ON
+% cmake -H. -B_build -DBUILD_TESTS=ON
 -- The C compiler identification is AppleClang 11.0.3.11030032
 -- The CXX compiler identification is AppleClang 11.0.3.11030032
 ...
--- Build files have been written to: /Users/evgengrmit/Evgengrmit/workspace/projects/hw05/_build
+-- Build files have been written to: /home/ivan/MrShip15/workspace/projects/hw05/_build
 ########################################
-$ cmake --build _build
+% cmake --build _build
 Scanning dependencies of target account
 [  6%] Building CXX object CMakeFiles/account.dir/banking/Account.cpp.o
 ...
@@ -163,7 +156,7 @@ Scanning dependencies of target account
 [100%] Built target check
 $ cmake --build _build --target test
 Running tests...
-Test project /Users/evgengrmit/Evgengrmit/workspace/projects/hw05/_build
+Test project /home/ivan/MrShip15/workspace/projects/hw05/_build
     Start 1: check
 1/1 Test #1: check ............................   Passed    0.30 sec
 
@@ -173,8 +166,8 @@ Total Test time (real) =   0.30 sec
 ```
 Запуск тестов
 ```sh
-$ _build/check
-Running main() from /Users/evgengrmit/Evgengrmit/workspace/projects/hw05/third-party/gtest/googletest/src/gtest_main.cc
+% _build/check
+Running main() from /home/ivan/MrShip15/workspace/projects/hw05/third-party/gtest/googletest/src/gtest_main.cc
 [==========] Running 5 tests from 2 test suites.
 [----------] Global test environment set-up.
 [----------] 3 tests from Account
@@ -239,10 +232,7 @@ EOF
 % travis lint
 Hooray, .travis.yml looks valid :)
 % travis login --auto
-Successfully logged in as Evgengrmit!
 % travis enable
-Detected repository as Evgengrmit/hw05, is this correct? |yes| y
-Evgengrmit/hw05: enabled :)
 ```
 4. Настройте [Coveralls.io](https://coveralls.io/).
 Обновление `CMakeLists.txt`
@@ -295,19 +285,8 @@ Hooray, .travis.yml looks valid :)
 `add`, `commit`, `push`
 ```sh
 % git add .
-% git commit -m "Coveralls"
-[master bd9e4cd] Coveralls
- 2 files changed, 48 insertions(+), 3 deletions(-)
+% git commit -m "make hw"
 % git push origin master   
-Enumerating objects: 7, done.
-Counting objects: 100% (7/7), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 791 bytes | 791.00 KiB/s, done.
-Total 4 (delta 3), reused 0 (delta 0)
-remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
-To https://github.com/Evgengrmit/hw05.git
-  9de08f9..bd9e4cd  master -> master
 ```
 ## Links
 
