@@ -8,8 +8,6 @@
 ```sh
 % git remote remove origin
 % hub create
-Updating origin
-https://github.com/MrShip15/hw05
 % git push -u origin master
 ```
 Cоздание `CMakeLists.txt`
