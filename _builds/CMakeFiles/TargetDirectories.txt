@@ -1,0 +1,6 @@
+/home/ivan/MrShip15/workspace/projects/hw07/_builds/CMakeFiles/edit_cache.dir
+/home/ivan/MrShip15/workspace/projects/hw07/_builds/CMakeFiles/check.dir
+/home/ivan/MrShip15/workspace/projects/hw07/_builds/CMakeFiles/test.dir
+/home/ivan/MrShip15/workspace/projects/hw07/_builds/CMakeFiles/account.dir
+/home/ivan/MrShip15/workspace/projects/hw07/_builds/CMakeFiles/rebuild_cache.dir
+/home/ivan/MrShip15/workspace/projects/hw07/_builds/CMakeFiles/transaction.dir

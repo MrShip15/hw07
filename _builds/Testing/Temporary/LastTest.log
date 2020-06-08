@@ -1,0 +1,46 @@
+Start testing: Jun 08 21:36 MSK
+----------------------------------------------------------
+1/1 Testing: check
+1/1 Test: check
+Command: "/home/ivan/MrShip15/workspace/projects/hw07/_builds/check"
+Directory: /home/ivan/MrShip15/workspace/projects/hw07/_builds
+"check" start time: Jun 08 21:36 MSK
+Output:
+----------------------------------------------------------
+Running main() from /home/ivan/.hunter/_Base/5659b15/9b2c9d4/8a1641b/Build/GTest/Source/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from Account
+[ RUN      ] Account.Constructor
+[       OK ] Account.Constructor (0 ms)
+[ RUN      ] Account.ChangeBalance
+[       OK ] Account.ChangeBalance (0 ms)
+[ RUN      ] Account.Lock
+[       OK ] Account.Lock (0 ms)
+[----------] 3 tests from Account (0 ms total)
+
+[----------] 2 tests from Transaction
+[ RUN      ] Transaction.MakeTransaction
+1 send to 2 $500
+Balance 1 is 499
+Balance 2 is 600
+[       OK ] Transaction.MakeTransaction (0 ms)
+[ RUN      ] Transaction.Fee
+3 send to 4 $500
+Balance 3 is 497
+Balance 4 is 600
+[       OK ] Transaction.Fee (0 ms)
+[----------] 2 tests from Transaction (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 2 test suites ran. (1 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"check" end time: Jun 08 21:36 MSK
+"check" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 08 21:36 MSK

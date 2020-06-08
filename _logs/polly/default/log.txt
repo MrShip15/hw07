@@ -1,0 +1,79 @@
+Execute command: [
+  `which`
+  `cmake`
+]
+[/home/ivan/MrShip15/workspace/projects/hw07]> "which" "cmake"
+/snap/bin/cmake
+Execute command: [
+  `cmake`
+  `--version`
+]
+[/home/ivan/MrShip15/workspace/projects/hw07]> "cmake" "--version"
+cmake version 3.17.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+Execute command: [
+  `cmake`
+  `-H.`
+  `-B/home/ivan/MrShip15/workspace/projects/hw07/_builds/default`
+  `-DCMAKE_TOOLCHAIN_FILE=/home/ivan/MrShip15/workspace/projects/hw07/tools/polly/default.cmake`
+]
+[/home/ivan/MrShip15/workspace/projects/hw07]> "cmake" "-H." "-B/home/ivan/MrShip15/workspace/projects/hw07/_builds/default" "-DCMAKE_TOOLCHAIN_FILE=/home/ivan/MrShip15/workspace/projects/hw07/tools/polly/default.cmake"
+-- [polly] Used toolchain: Default
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- [hunter] Calculating Toolchain-SHA1
+-- [hunter] Calculating Config-SHA1
+-- [hunter] HUNTER_ROOT: /home/ivan/.hunter
+-- [hunter] [ Hunter-ID: 5659b15 | Toolchain-ID: 9b2c9d4 | Config-ID: 8a1641b ]
+-- [hunter] GTEST_ROOT: /home/ivan/.hunter/_Base/5659b15/9b2c9d4/8a1641b/Install (ver.: 1.10.0)
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ivan/MrShip15/workspace/projects/hw07/_builds/default
+Execute command: [
+  `cmake`
+  `--build`
+  `/home/ivan/MrShip15/workspace/projects/hw07/_builds/default`
+  `--`
+]
+[/home/ivan/MrShip15/workspace/projects/hw07]> "cmake" "--build" "/home/ivan/MrShip15/workspace/projects/hw07/_builds/default" "--"
+Scanning dependencies of target account
+[ 25%] Building CXX object CMakeFiles/account.dir/banking/Account.cpp.o
+[ 50%] Linking CXX static library libaccount.a
+[ 50%] Built target account
+Scanning dependencies of target transaction
+[ 75%] Building CXX object CMakeFiles/transaction.dir/banking/Transaction.cpp.o
+[100%] Linking CXX static library libtransaction.a
+[100%] Built target transaction
+Execute command: [
+  `ctest`
+]
+[/home/ivan/MrShip15/workspace/projects/hw07/_builds/default]> "ctest"
+*********************************
+No test configuration file found!
+*********************************
+Usage
+
+  ctest [options]
+
